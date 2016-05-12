@@ -1,0 +1,219 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700);
+
+
+
+body {
+	font-family: 'Source Sans Pro', sans-serif;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background-color: #747474;
+}
+
+
+
+div {
+	box-sizing:border-box;	
+}
+
+#demo {
+	position: absolute;
+	left: 50%;
+	font-weight: 700;
+	font-family: 'Source Sans Pro', sans-serif;	
+	opacity:0;	
+	}
+	
+#controlPanel {
+	height: 270px;
+	width: 640px;
+	position: absolute;
+	left: 50%;
+	background-color: #E4E4E4;
+	opacity:0;
+	border-radius: 4px;
+}
+
+#credits {
+	position: absolute;
+	bottom: 6px;
+	right:10px;
+	text-align: right;
+	font-size:11px;
+}
+
+#cover {
+	height: 300px;
+	width: 460px;
+	position:absolute;
+	top:0;
+	left:0;
+	background-color: rgba(0,0,0,0);
+	z-index: 10000;
+	opacity:0;
+	visibility:hidden;
+}
+
+
+#dragWrap {
+	width:190px;
+	height: auto;
+	position: absolute;
+	top:50px;
+	left: 20px;
+}
+
+.dragBounds {
+	width:190px;
+	height: 30px;
+	float: left;
+	margin-bottom: 10px;
+	position:relative;
+	clear:both;
+}
+
+.dragBounds:after {
+	width: 98%;
+	height: 4px;
+	background: black;
+	position: absolute;
+	top:15px;
+	left:1%;
+	z-index: 101;
+	content: '';
+	border-radius: 2px;
+	opacity: 0.5;
+}
+
+.textBounds {
+	width:190px;
+	float: left;
+	position:relative;
+	clear:both;
+	font-size: 11px;
+	line-height: 1.2;
+	
+}
+
+.dragger {
+	width:30px;
+	height: 30px;
+	background: url("http://cdn.onlinewebfonts.com/svg/img_169902.svg");
+	position: absolute;
+	top:0;
+	left:0;
+	z-index: 105;
+}
+
+
+#dataWrap {
+	width:80px;
+	position: absolute;
+	top: 50px;
+	left: 220px;
+}
+
+.data, .finalData {
+	width:80px;
+	height: 30px;
+	float: left;
+	margin-bottom: 10px;
+	background: gray;
+	font-size: 18px;
+	line-height: 30px;
+	text-align:center;
+	font-weight: 700;
+	color: white;
+	border-radius: 4px;	
+}
+
+
+#run {
+	width:140px;
+	padding:10px;
+	height: 80px;
+	position: absolute;
+	left: 470px;
+	top: 90px;
+	font-size: 36px;
+	font-weight: 700;
+	line-height: 1;
+	cursor:pointer;
+	text-align:center;
+	color: white;
+	background: #8fc400;
+	border: solid 1px #B8ABA4;
+	border-radius: 4px;	
+	background: -moz-linear-gradient(top,  #8fc400 0%, #8fc400 100%);
+	background: -webkit-linear-gradient(top,  #8fc400 0%,#8fc400 100%);
+	background: linear-gradient(to bottom,  #8fc400 0%,#8fc400 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8fc400', endColorstr='#8fc400',GradientType=0 );
+	
+}
+
+#run:hover, .dataType:hover {
+	background:black;	
+	color: white;
+}
+
+#run span {
+	display: block;
+	font-size: .5em;
+}
+
+#chartChoice {
+	width:140px;
+	left: 310px;
+	text-align: center;
+	top:50px;
+	position: absolute;
+}
+
+.dataType {
+	width:100%;
+	margin: 0 2px 6px 0;
+	float: left;
+	height:43px;
+	font-size: 14px;
+	border: solid 2px #B8ABA4;
+	line-height:40px;
+	cursor: pointer;
+	border-radius: 4px;
+	background: #ffffff;
+	background: -moz-linear-gradient(top,  #ffffff 0%, #f6f6f6 47%, #ededed 100%);
+	background: -webkit-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%);
+	background: linear-gradient(to bottom,  #ffffff 0%,#f6f6f6 47%,#ededed 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 );
+	
+}
+
+#instructions {
+	position: absolute;
+	top:0;
+	left: 0;
+	width: 100%;
+	font-weight: 700;
+	color: #606060;
+}
+
+.steps {
+	position: absolute;
+	top:10px;
+	font-size: 24px;
+	line-height: 1;
+		
+}
+
+.steps span {
+	font-size: .5em;
+	display: block;
+
+	}
+
+.step1 {left:30px;}
+.step2 {left: 310px;}
+.step3 {left: 470px;}
+

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div class="section">
+    <div class="row" style="">
+        <div class="col-sm-12" style="height: 1000px">
+            <iframe src="http://data-art.net/weyeser_explorer/swf/weyeser_explorer.html" scrolling="no"
+                    frameborder="0" height="100%" width="100%" style="position:absolute; clip:rect(0px,1100px,800px,0px);
+						top:-160px; left:-160px;"
+                    >
+                <p>Your browser does not support iframes.</p>
+            </iframe>
+        </div>
+    </div>
+</div>
+</body>
+
+
+
+
+<script>
+
+    var width2 = 960,
+            height2 = 500;
+
+    var color2 = d3.scale.category20();
+
+    var force2 = d3.layout.force()
+            .charge(-120)
+            .linkDistance(30)
+            .size([width2, height2]);
+
+    var svg2 = d3.select("#cluster1").append("svg")
+            .attr("width", width2)
+            .attr("height", height2);
+
+    var fisheye2 = d3.fisheye.circular()
+            .radius(200)
+            .distortion(2);
+
+    d3.json("news.json", function(error, graph) {
+        if (error) throw error;
+
+        force2
+                .nodes(graph.nodes)
+                .links(graph.links)
+                .start();
+
+        var link = svg2.selectAll(".link")
+                .data(graph.links)
+                .enter().append("line")
+                .attr("class", "link")
+                .style("stroke-width", function(d) { return Math.sqrt(d.value); });
+
+        var node = svg2.selectAll(".node")
+                .data(graph.nodes)
+                .enter().append("circle")
+                .attr("class", "node")
+                .attr("r", 5)
+                .style("fill", function(d) { return color2(d.group); })
+                .call(force2.drag);
+
+        node.append("title")
+                .text(function(d) { return d.name; });
+
+        force2.on("tick", function() {
+            link.attr("x1", function(d) { return d.source.x; })
+                    .attr("y1", function(d) { return d.source.y; })
+                    .attr("x2", function(d) { return d.target.x; })
+                    .attr("y2", function(d) { return d.target.y; });
+
+            node.attr("cx", function(d) { return d.x; })
+                    .attr("cy", function(d) { return d.y; });
+        });
+
+        svg2.on("mousemove", function() {
+            fisheye2.focus(d3.mouse(this));
+
+            node.each(function(d) { d.fisheye = fisheye2(d); })
+                    .attr("cx", function(d) { return d.fisheye.x; })
+                    .attr("cy", function(d) { return d.fisheye.y; })
+                    .attr("r", function(d) { return d.fisheye.z * 4.5; });
+
+            link.attr("x1", function(d) { return d.source.fisheye2.x; })
+                    .attr("y1", function(d) { return d.source.fisheye2.y; })
+                    .attr("x2", function(d) { return d.target.fisheye.x; })
+                    .attr("y2", function(d) { return d.target.fisheye.y; });
+        });
+    });
+
+
+
+</script>
+
+</html>

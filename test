@@ -1,0 +1,43 @@
+APOS
+CTX-APOS-Bfr CTX-APOS-Nxt
+CTX-APOS-Bfr2 CTX-APOS-Nxt2
+CTX-APOS-Bfr2_ CTX-APOS-Nxt2_
+TPOS
+CTX-TPOS-Bfr CTX-TPOS-Nxt  
+CTX-TPOS-Bfr2 CTX-TPOS-Nxt2
+CTX-TPOS-Bfr2_ CTX-TPOS-Nxt2_
+NPOS CTX-NPOS-Nxt CTX-NPOS-Bfr #Overfits
+CTX-NPOS-Nxt2 CTX-NPOS-Bfr2
+brown_12 CTX-b12-Bfr CTX-b12-Nxt
+brown_4CTX-b4-Bfr CTX-b4-Nxt 
+brown_8 CTX-b8-Bfr CTX-b8-Nxt
+CTX-b12-Bfr2 CTX-b12-Nxt2
+CTX-b4-Bfr2 CTX-b4-Nxt2 
+CTX-b8-Bfr2 CTX-b8-Nxt2
+CTX-b12-Bfr2_ CTX-b12-Nxt2_
+CTX-b4-Bfr2_ CTX-b4-Nxt2_ 
+CTX-b8-Bfr2_ CTX-b8-Nxt2_
+word-lower 
+CTX-word-lower-Nxt  CTX-word-lower-Bfr
+prefix1 prefix2 prefix3
+suffix1 suffix2 suffix3
+INITCAP
+INITCAP_AND_GOODCAP
+ALLCAP  
+ALLCAP_AND_GOODCAP
+HASDIGIT SINGLEDIGIT DOUBLEDIGIT HASDASH PUNCTUATION
+QUOTED     
+DEP-1-APOS
+DEP-2-APOS_
+DEP-2-APOS
+DEP-1-dep
+DEP-2-dep_
+DEP-2-dep
+DEP-1-word-lower DEP-2-word-lower
+DEP-INV-1-APOS 
+DEP-INV-2-APOS_
+DEP-INV-2-APOS
+DEP-INV-1-dep 
+DEP-INV-2-dep_
+DEP-INV-2-dep
+DEP-INV-1-word-lower DEP-INV-2-word-lower
